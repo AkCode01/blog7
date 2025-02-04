@@ -81,3 +81,7 @@ Route::prefix('/pages')->group(function(){
         return "<h2>Images Gallery in the Pages</h2>";
     });
 });
+
+Route::fallback(function(){
+    return "<h3>Page not found</h3>";
+});
