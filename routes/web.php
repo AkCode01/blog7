@@ -40,3 +40,11 @@ Route::get('/OurTeam/{}', function () {
 Route::get('/CalcTable/{tn}/{sn}/{en}', function ($TblNum, $StrtNum,$EndNum) {
     return view('CalcView',['tn' => $TblNum,'sn' => $StrtNum , 'en' =>$EndNum]);
 });
+
+Route::get('/post/{id?}',function(string $id = null){
+    if($id){
+        return "<h2>Post ID = ".$id."</h2>";
+    }else{
+        return "<h2>Post ID not found</h2>";
+    }
+});
