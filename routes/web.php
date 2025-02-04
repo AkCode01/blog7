@@ -58,3 +58,11 @@ Route::get('/Select/{cname?}',function(String $cname = null){
         return "<h2>Select is empty</h2>";
     }
 })->whereIn('cname',['Karachi','Lahore','Islamabad']);
+
+Route::get('/YehNameBadMainchangeHoSaktaHai', function () {
+    return "<h2>You can give a name to the route</h2>";
+})->name('Testing');
+
+Route::get('/abc',function(){
+    return redirect()->route('Testing');
+});
