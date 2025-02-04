@@ -25,3 +25,18 @@ Route::get('/Team/{name}',function($name){
 Route::get('/Contact/{num}',function($num){
     return "<h2>Contact num: $num</h2>";
 })->whereAlphaNumeric('num');
+
+Route::get('/OurTeam', function () {
+    $name = "Adnan";
+    $names = ["Apple","Ball","Cat"];
+    return view('TeamOur', ['name' => $name, 'names' => $names]);
+    // return view('TeamOur', compact('name', 'names')); 
+});
+
+Route::get('/OurTeam/{}', function () {
+    return "<h3>Route find the value</h3>";
+});
+
+Route::get('/CalcTable/{tn}/{sn}/{en}', function ($TblNum, $StrtNum,$EndNum) {
+    return view('CalcView',['tn' => $TblNum,'sn' => $StrtNum , 'en' =>$EndNum]);
+});
