@@ -1,6 +1,8 @@
 <?php
 
+use Dotenv\Util\Str;
 use Illuminate\Support\Facades\Route;
+use PhpParser\Node\Expr\Cast\String_;
 
 Route::get('/', function () {
     return view('welcome');
@@ -48,3 +50,11 @@ Route::get('/post/{id?}',function(string $id = null){
         return "<h2>Post ID not found</h2>";
     }
 });
+
+Route::get('/Select/{cname?}',function(String $cname = null){
+    if($cname){
+        return "<h2>Your select: ".$cname."</h2>";
+    }else{
+        return "<h2>Select is empty</h2>";
+    }
+})->whereIn('cname',['Karachi','Lahore','Islamabad']);
