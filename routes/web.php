@@ -66,3 +66,18 @@ Route::get('/YehNameBadMainchangeHoSaktaHai', function () {
 Route::get('/abc',function(){
     return redirect()->route('Testing');
 });
+
+Route::prefix('/pages')->group(function(){
+    Route::get('/AboutUs',function(){
+        return "<h2>About Us in the Pages</h2>";
+    });
+    Route::get('/ContactUs',function(){
+        return "<h2>Contact Us in the Pages</h2>";
+    });
+    Route::get('/OurServices',function(){
+        return "<h2>Our Services in the Pages</h2>";
+    });
+    Route::get('/ImageGallery',function(){
+        return "<h2>Images Gallery in the Pages</h2>";
+    });
+});
